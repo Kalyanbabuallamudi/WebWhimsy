@@ -1,163 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Creative Web Solutions</title>
-  <link rel="stylesheet" href="styles2.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
-  <style>
-    /* Apply cursive font only to the logo */
-    .logo h2 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 36px;
-      color: #007BFF;
-      margin: 0;
-      padding: 10px 0;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-      letter-spacing: 1px;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Creative Web Solutions</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Apply cursive font only to the logo */
+        .logo h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            color: #007BFF;
+            margin: 0;
+            padding: 10px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+            text-align: center;
+        }
 
-    /* Additional styling for the nav */
-    nav {
-      background-color: #fff;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      display: flex; /* Flexbox for nav layout */
-      justify-content: space-between; /* Space between logo and menu */
-      align-items: center; /* Center vertically */
-    }
+        /* Additional styling for the nav */
+        nav {
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex; /* Flexbox for nav layout */
+            justify-content: space-between; /* Space between logo and menu */
+            align-items: center; /* Center vertically */
+            position: relative; /* Relative positioning for dropdown */
+        }
 
-    .nav-links {
-      list-style: none;
-      padding: 0;
-      display: flex; /* Default to horizontal layout */
-    }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            display: flex; /* Default to horizontal layout */
+            margin: 0; /* Reset margin for ul */
+        }
 
-    .nav-links li {
-      margin-right: 20px;
-    }
+        .nav-links li {
+            margin-right: 20px;
+        }
 
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
 
-    /* Hide nav links by default in mobile view */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none; /* Hide nav links */
-        flex-direction: column; /* Stack vertically */
-        position: absolute; /* Position absolutely */
-        top: 60px; /* Below the nav */
-        left: 0; /* Align to the left */
-        background: white; /* Background for dropdown */
-        width: 100%; /* Full width */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
-        z-index: 1; /* Stack above other elements */
-      }
+        /* Hide nav links by default in mobile view */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide nav links */
+                flex-direction: column; /* Stack vertically */
+                position: absolute; /* Position absolutely */
+                top: 60px; /* Below the nav */
+                left: 0; /* Align to the left */
+                background: white; /* Background for dropdown */
+                width: 100%; /* Full width */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+                z-index: 1; /* Stack above other elements */
+            }
 
-      .nav-links li {
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 10px; /* Space between links */
-      }
+            .nav-links li {
+                margin-right: 0; /* Remove right margin */
+                margin-bottom: 10px; /* Space between links */
+            }
 
-      #menu-toggle:checked + .menu-icon + .nav-links {
-        display: flex; /* Show links when menu is toggled */
-      }
+            #menu-toggle:checked + .menu-icon + .nav-links {
+                display: flex; /* Show links when menu is toggled */
+            }
 
-      .menu-icon {
-        cursor: pointer; /* Change cursor on hover */
-        font-size: 24px; /* Size of the icon */
-      }
-    }
-  </style>
+            .menu-icon {
+                cursor: pointer; /* Change cursor on hover */
+                font-size: 24px; /* Size of the icon */
+                display: block; /* Ensure the icon is visible */
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
+<header>
     <nav>
-      <div class="logo">
-        <h2>Creative Web Solutions</h2>
-      </div>
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="Registration.html">Register/Login</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
+        <div class="logo">
+            <h2>Creative Web Solutions</h2>
+        </div>
+        <input type="checkbox" id="menu-toggle" style="display: none;"> <!-- Hidden checkbox for toggling -->
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="Registration.html">Register/Login</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 
-  <section class="hero" id="home">
+<section class="hero" id="home">
     <div class="overlay"></div>
     <div class="content">
-      <h1>Welcome to Creative Web Solutions</h1>
-      <p>We create modern, responsive websites that deliver outstanding user experiences. From web development to UI/UX design and SEO optimization, we help your brand stand out online.</p>
-      <a href="#services" class="btn">Explore Services</a>
+        <h1>Welcome to Creative Web Solutions</h1>
+        <p>We create modern, responsive websites that deliver outstanding user experiences. From web development to UI/UX design and SEO optimization, we help your brand stand out online.</p>
+        <a href="#services" class="btn">Explore Services</a>
     </div>
-  </section>
+</section>
 
-  <section class="combined-section" style="background-image: url('b3.webp'); background-size: cover; background-position: center; padding: 50px 0;">
+<section class="combined-section" style="background-image: url('b3.webp'); background-size: cover; background-position: center; padding: 50px 0;">
     <div class="services" id="services">
-      <h2>Our Services</h2>
-      <div class="service-grid">
-        <div class="service-box">
-          <h3>Web Development</h3>
-          <p>We create stunning and responsive websites for businesses.</p>
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-box">
+                <h3>Web Development</h3>
+                <p>We create stunning and responsive websites for businesses.</p>
+            </div>
+            <div class="service-box">
+                <h3>UI/UX Design</h3>
+                <p>Designing modern and user-friendly interfaces to enhance user experience.</p>
+            </div>
+            <div class="service-box">
+                <h3>SEO Optimization</h3>
+                <p>Optimizing websites to rank higher on search engines and drive traffic.</p>
+            </div>
         </div>
-        <div class="service-box">
-          <h3>UI/UX Design</h3>
-          <p>Designing modern and user-friendly interfaces to enhance user experience.</p>
-        </div>
-        <div class="service-box">
-          <h3>SEO Optimization</h3>
-          <p>Optimizing websites to rank higher on search engines and drive traffic.</p>
-        </div>
-      </div>
     </div>
-  
-    <div class="testimonials" id="testimonials">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-box">
-          <p>"Absolutely fantastic service! Our website looks amazing and works perfectly."</p>
-          <h4>- Client 1</h4>
-        </div>
-        <div class="testimonial-box">
-          <p>"Their team is highly professional and delivered exactly what we needed."</p>
-          <h4>- Client 2</h4>
-        </div>
-      </div>
-    </div>
-  
-    <div class="contact" id="contact">
-      <h2>Contact Us</h2>
-      <p style="color: rgb(12, 245, 202);">Feel free to reach out to us for any inquiries or collaborations.</p>
-      
-      <a href="contact.html" 
-         style="display: inline-block; 
-                margin-top: 20px; 
-                padding: 10px 20px; 
-                background-color: #007BFF; 
-                color: white; 
-                text-decoration: none; 
-                border-radius: 5px; 
-                transition: background-color 0.3s; 
-                cursor: pointer;"> 
-          Get in Touch
-      </a>
-    </div>
-  </section>
 
-  <footer>
+    <div class="testimonials" id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-box">
+                <p>"Absolutely fantastic service! Our website looks amazing and works perfectly."</p>
+                <h4>- Client 1</h4>
+            </div>
+            <div class="testimonial-box">
+                <p>"Their team is highly professional and delivered exactly what we needed."</p>
+                <h4>- Client 2</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p style="color: rgb(12, 245, 202);">Feel free to reach out to us for any inquiries or collaborations.</p>
+
+        <a href="contact.html"
+           style="display: inline-block; 
+                  margin-top: 20px; 
+                  padding: 10px 20px; 
+                  background-color: #007BFF; 
+                  color: white; 
+                  text-decoration: none; 
+                  border-radius: 5px; 
+                  transition: background-color 0.3s; 
+                  cursor: pointer;">
+            Get in Touch
+        </a>
+    </div>
+</section>
+
+<footer>
     <p>&copy; 2024 Creative Web Solutions by Kalyan Babu Allamudi | All Rights Reserved</p>
-  </footer>
+</footer>
 
 </body>
 </html>

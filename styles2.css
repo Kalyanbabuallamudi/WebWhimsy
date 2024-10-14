@@ -1,167 +1,168 @@
 /* Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  header {
-    background-color: #333;
-    padding: 10px 20px;
-    position: relative;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav .logo {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-  
-  nav .menu-icon {
-    display: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  background-color: #333;
+  padding: 10px 20px;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav .menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Default nav styles for desktop */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Mobile Menu */
+#menu-toggle {
+  display: none; /* Hide checkbox by default */
+}
+
+@media (max-width: 768px) {
+  /* Adjust the ul for mobile */
   nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav ul li {
-    margin: 0 10px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 400;
-    padding: 10px;
-    transition: background-color 0.3s;
-  }
-  
-  nav ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-  }
-  
-  /* Mobile Menu */
-  #menu-toggle {
-    display: none;
-  }
-  
-  @media (max-width: 768px) {
-    nav ul {
       flex-direction: column;
       position: absolute;
       top: 100%;
       left: 0;
       width: 100%;
       background-color: #333;
-      display: none;
-    }
-  
-    nav ul li {
+      display: none; /* Hide the menu by default */
+  }
+
+  nav ul li {
       text-align: center;
       width: 100%;
-    }
-  
-    #menu-toggle:checked + label + ul {
-      display: flex;
-    }
-  
-    nav .menu-icon {
-      display: block;
-    }
   }
-  
-  /* Hero Section */
-  .hero {
-    position: relative;
-    height: 100vh;
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
+
+  /* Show the menu when the checkbox is checked */
+  #menu-toggle:checked + label + ul {
+      display: flex; /* Show menu */
   }
-  
-  .hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+
+  nav .menu-icon {
+      display: block; /* Show the hamburger menu icon */
   }
-  
-  .hero .content {
-    z-index: 1;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-  }
-  
-  .hero .btn {
-    background-color: #007BFF;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .hero .btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Section Styles */
-  .combined-section {
-    padding: 50px;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .service-grid,
-  .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .service-box,
-  .testimonial-box {
-    padding: 20px;
-    background-color: rgba(206, 208, 216, 0.7);
-    border-radius: 8px;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #06d722;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-  }
-  
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero .content {
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Section Styles */
+.combined-section {
+  padding: 50px;
+  color: #fff;
+  text-align: center;
+}
+
+.service-grid,
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.service-box,
+.testimonial-box {
+  padding: 20px;
+  background-color: rgba(206, 208, 216, 0.7);
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background-color: #06d722;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
