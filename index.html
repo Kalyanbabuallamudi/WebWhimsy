@@ -28,12 +28,17 @@
             display: flex; /* Flexbox for nav layout */
             justify-content: space-between; /* Space between logo and menu */
             align-items: center; /* Center vertically */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            max-width: 1200px; /* Maximum width */
+            margin: auto; /* Center horizontally */
         }
 
         .nav-links {
             list-style: none;
             padding: 0;
             display: flex; /* Default to horizontal layout */
+            flex-wrap: wrap; /* Wrap links on small screens */
+            margin: 0; /* Remove margin */
         }
 
         .nav-links li {
@@ -46,43 +51,37 @@
             font-weight: 600;
         }
 
-        /* Hide nav links by default in mobile view */
+        /* Adjust hero section */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .combined-section {
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+        }
+
+        /* Styles for mobile devices */
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column; /* Stack logo and links vertically */
+                align-items: flex-start; /* Align items to the left */
+            }
+
             .nav-links {
-                display: none; /* Hide nav links */
-                flex-direction: column; /* Stack vertically */
-                position: absolute; /* Position absolutely */
-                top: 60px; /* Below the nav */
-                left: 0; /* Align to the left */
-                background: white; /* Background for dropdown */
-                width: 100%; /* Full width */
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
-                z-index: 1; /* Stack above other elements */
+                width: 100%; /* Full width for links */
+                justify-content: flex-start; /* Align links to the left */
+                margin-top: 10px; /* Space between logo and links */
             }
 
             .nav-links li {
-                margin-right: 0; /* Remove right margin */
+                margin-right: 10px; /* Adjust margin for mobile */
                 margin-bottom: 10px; /* Space between links */
-            }
-
-            #menu-toggle:checked + .menu-icon + .nav-links {
-                display: flex; /* Show links when menu is toggled */
-            }
-
-            .menu-icon {
-                cursor: pointer; /* Change cursor on hover */
-                font-size: 24px; /* Size of the icon */
             }
         }
     </style>
-    <script>
-        window.onload = function() {
-            if (window.innerWidth < 768) {
-                // Redirect to a desktop version or inform users to switch to desktop
-                window.location.href = "https://example.com/desktop-version"; // Change this URL to your desktop site
-            }
-        };
-    </script>
 </head>
 <body>
 
@@ -91,8 +90,6 @@
         <div class="logo">
             <h2>Creative Web Solutions</h2>
         </div>
-        <input type="checkbox" id="menu-toggle" style="display: none;"> <!-- Hidden checkbox for toggling -->
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -111,7 +108,7 @@
     </div>
 </section>
 
-<section class="combined-section" style="background-image: url('b3.webp'); background-size: cover; background-position: center; padding: 50px 0;">
+<section class="combined-section" style="background-image: url('b3.webp'); padding: 50px 0;">
     <div class="services" id="services">
         <h2>Our Services</h2>
         <div class="service-grid">
