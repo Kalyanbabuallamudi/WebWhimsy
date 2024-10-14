@@ -28,14 +28,12 @@
             display: flex; /* Flexbox for nav layout */
             justify-content: space-between; /* Space between logo and menu */
             align-items: center; /* Center vertically */
-            position: relative; /* Relative positioning for dropdown */
         }
 
         .nav-links {
             list-style: none;
             padding: 0;
             display: flex; /* Default to horizontal layout */
-            margin: 0; /* Reset margin for ul */
         }
 
         .nav-links li {
@@ -74,15 +72,14 @@
             .menu-icon {
                 cursor: pointer; /* Change cursor on hover */
                 font-size: 24px; /* Size of the icon */
-                display: block; /* Ensure the icon is visible */
             }
         }
     </style>
     <script>
         window.onload = function() {
             if (window.innerWidth < 768) {
-                alert("Please view this page in desktop mode only. Otherwise, close the page.");
-                window.close(); // Attempt to close the window (may not work on all browsers)
+                // Redirect to a desktop version or inform users to switch to desktop
+                window.location.href = "https://example.com/desktop-version"; // Change this URL to your desktop site
             }
         };
     </script>
