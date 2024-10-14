@@ -10,98 +10,70 @@
   <style>
     /* Apply cursive font only to the logo */
     .logo h2 {
-      font-family: 'Dancing Script', cursive; /* Cursive font */
-      font-size: 36px; /* Adjust the font size */
-      color: #007BFF; /* Color for the logo text */
-      margin: 0; /* Remove default margin */
-      padding: 10px 0; /* Add padding */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
-      letter-spacing: 1px; /* Add spacing between letters */
-      text-align: center; /* Center the text */
+      font-family: 'Dancing Script', cursive;
+      font-size: 36px;
+      color: #007BFF;
+      margin: 0;
+      padding: 10px 0;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      letter-spacing: 1px;
+      text-align: center;
     }
 
     /* Additional styling for the nav */
     nav {
-      background-color: #fff; /* Background color for navigation */
-      padding: 15px; /* Padding around the nav */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+      background-color: #fff;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex; /* Flexbox for nav layout */
+      justify-content: space-between; /* Space between logo and menu */
+      align-items: center; /* Center vertically */
     }
-    
+
     .nav-links {
-      list-style: none; /* Remove bullet points */
-      padding: 0; /* Remove padding */
+      list-style: none;
+      padding: 0;
+      display: flex; /* Default to horizontal layout */
     }
 
     .nav-links li {
-      display: inline; /* Inline list items */
-      margin-right: 20px; /* Space between links */
+      margin-right: 20px;
     }
 
     .nav-links a {
-      text-decoration: none; /* Remove underline from links */
-      color: #333; /* Color for links */
-      font-weight: 600; /* Font weight for links */
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
     }
 
-    /* Add responsiveness */
+    /* Hide nav links by default in mobile view */
     @media (max-width: 768px) {
-      .logo h2 {
-        font-size: 28px; /* Adjust logo size for smaller screens */
+      .nav-links {
+        display: none; /* Hide nav links */
+        flex-direction: column; /* Stack vertically */
+        position: absolute; /* Position absolutely */
+        top: 60px; /* Below the nav */
+        left: 0; /* Align to the left */
+        background: white; /* Background for dropdown */
+        width: 100%; /* Full width */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+        z-index: 1; /* Stack above other elements */
       }
-      
+
       .nav-links li {
-        display: block; /* Stack links vertically on small screens */
         margin-right: 0; /* Remove right margin */
         margin-bottom: 10px; /* Space between links */
       }
+
+      #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex; /* Show links when menu is toggled */
+      }
+
+      .menu-icon {
+        cursor: pointer; /* Change cursor on hover */
+        font-size: 24px; /* Size of the icon */
+      }
     }
-    /* Hero Section */
-  .hero {
-    position: relative;
-    height: 100vh;
-    background: url('a5.avif') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-  }
-  
-  .hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .hero .content {
-    z-index: 1;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-  }
-  
-  .hero .btn {
-    background-color: #007BFF;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .hero .btn:hover {
-    background-color: #0056b3;
-  }
   </style>
 </head>
 <body>
