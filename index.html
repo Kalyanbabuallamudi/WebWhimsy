@@ -78,6 +78,14 @@
             }
         }
     </style>
+    <script>
+        window.onload = function() {
+            if (window.innerWidth < 768) {
+                alert("Please view this page in desktop mode only. Otherwise, close the page.");
+                window.close(); // Attempt to close the window (may not work on all browsers)
+            }
+        };
+    </script>
 </head>
 <body>
 
