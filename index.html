@@ -28,17 +28,12 @@
             display: flex; /* Flexbox for nav layout */
             justify-content: space-between; /* Space between logo and menu */
             align-items: center; /* Center vertically */
-            flex-wrap: wrap; /* Allow wrapping on small screens */
-            max-width: 1200px; /* Maximum width */
-            margin: auto; /* Center horizontally */
         }
 
         .nav-links {
             list-style: none;
             padding: 0;
             display: flex; /* Default to horizontal layout */
-            flex-wrap: wrap; /* Wrap links on small screens */
-            margin: 0; /* Remove margin */
         }
 
         .nav-links li {
@@ -65,23 +60,37 @@
 
         /* Styles for mobile devices */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column; /* Stack logo and links vertically */
-                align-items: flex-start; /* Align items to the left */
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; /* Full viewport height */
+                background-color: #fff; /* Background color */
+                color: #333; /* Text color */
+                font-family: 'Poppins', sans-serif; /* Font family */
+                text-align: center; /* Center text */
             }
 
-            .nav-links {
-                width: 100%; /* Full width for links */
-                justify-content: flex-start; /* Align links to the left */
-                margin-top: 10px; /* Space between logo and links */
-            }
-
-            .nav-links li {
-                margin-right: 10px; /* Adjust margin for mobile */
-                margin-bottom: 10px; /* Space between links */
+            .message {
+                max-width: 400px; /* Maximum width for message */
             }
         }
     </style>
+    <script>
+        // JavaScript to detect mobile devices
+        if (window.innerWidth <= 768) {
+            document.addEventListener("DOMContentLoaded", function() {
+                // Alert user to view in desktop mode
+                document.body.innerHTML = `
+                    <div class="message">
+                        <h1>Desktop Mode Recommended</h1>
+                        <p>Please view this site in desktop mode for the best experience.</p>
+                        <p>If you're on a mobile device, please close this page.</p>
+                    </div>
+                `;
+            });
+        }
+    </script>
 </head>
 <body>
 
