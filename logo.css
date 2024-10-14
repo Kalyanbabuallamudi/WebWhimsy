@@ -1,0 +1,47 @@
+ /* Apply cursive font only to the logo */
+ .logo h2 {
+    font-family: 'Dancing Script', cursive; /* Cursive font */
+    font-size: 36px; /* Adjust the font size */
+    color: #007BFF; /* Color for the logo text */
+    margin: 0; /* Remove default margin */
+    padding: 10px 0; /* Add padding */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+    letter-spacing: 1px; /* Add spacing between letters */
+    text-align: center; /* Center the text */
+  }
+
+  /* Additional styling for the nav */
+  nav {
+    background-color: #fff; /* Background color for navigation */
+    padding: 15px; /* Padding around the nav */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+  
+  .nav-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+  }
+
+  .nav-links li {
+    display: inline; /* Inline list items */
+    margin-right: 20px; /* Space between links */
+  }
+
+  .nav-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Color for links */
+    font-weight: 600; /* Font weight for links */
+  }
+
+  /* Add responsiveness */
+  @media (max-width: 768px) {
+    .logo h2 {
+      font-size: 28px; /* Adjust logo size for smaller screens */
+    }
+    
+    .nav-links li {
+      display: block; /* Stack links vertically on small screens */
+      margin-right: 0; /* Remove right margin */
+      margin-bottom: 10px; /* Space between links */
+    }
+  }

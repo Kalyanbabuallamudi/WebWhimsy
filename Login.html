@@ -5,88 +5,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login Page</title>
-  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="styles2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
+    /* Global Styles */
+    * {
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      box-sizing: border-box;
     }
-  
+
+    body {
+      font-family: 'Poppins', sans-serif; /* Use Poppins font */
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      min-height: 100vh; /* Ensure full height */
+    }
+
+    header {
+      background-color: #333;
+      padding: 10px 20px; /* Adjust padding */
+    }
+
+    /* Logo Styles */
+    /* Apply cursive font only to the logo */
+    .logo h2 {
+      font-family: 'Dancing Script', cursive; /* Cursive font */
+      font-size: 36px; /* Adjust the font size */
+      color: #007BFF; /* Color for the logo text */
+      margin: 0; /* Remove default margin */
+      padding: 10px 0; /* Add padding */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+      letter-spacing: 1px; /* Add spacing between letters */
+      text-align: center; /* Center the text */
+    }
+
+    /* Additional styling for the nav */
+    nav {
+      background-color: #c9ae16; /* Background color for navigation */
+      padding: 15px; /* Padding around the nav */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+    
+    .nav-links {
+      list-style: none; /* Remove bullet points */
+      padding: 0; /* Remove padding */
+    }
+
+    .nav-links li {
+      display: inline; /* Inline list items */
+      margin-right: 20px; /* Space between links */
+    }
+
+    .nav-links a {
+      text-decoration: none; /* Remove underline from links */
+      color: #333; /* Color for links */
+      font-weight: 600; /* Font weight for links */
+    }
+
+    /* Add responsiveness */
+    @media (max-width: 768px) {
+      .logo h2 {
+        font-size: 28px; /* Adjust logo size for smaller screens */
+      }
+      
+      .nav-links li {
+        display: block; /* Stack links vertically on small screens */
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Space between links */
+      }
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Position the menu */
+        top: 60px; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: #333; /* Background color */
+        display: none; /* Initially hidden */
+        gap: 0;
+      }
+
+      nav ul li {
+        text-align: center; /* Center nav items */
+        width: 100%; /* Full width for mobile */
+        padding: 10px 0; /* Padding */
+      }
+
+      nav ul.show-menu {
+        display: block; /* Show menu when toggled */
+      }
+    }
+
+    /* Content Section */
     .content {
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-grow: 1;
+      flex-grow: 1; /* Allow content area to grow */
       padding: 20px;
-      overflow-y: auto;
     }
+
     .login-form {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      margin: 0 auto;
+      background-color: #fff; /* Form background color */
+      padding: 20px; /* Padding */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+      width: 100%; /* Full width */
+      max-width: 400px; /* Max width */
+      margin: 0 auto; /* Center the form */
     }
+
     h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      text-align: center; /* Center the heading */
+      font-size: 24px; /* Heading size */
+      margin-bottom: 20px; /* Spacing */
+      text-align: center; /* Center heading */
     }
+
     label {
-      display: block;
-      margin: 10px 0 5px;
+      display: block; /* Block display */
+      margin: 10px 0 5px; /* Margins */
+      font-weight: 600; /* Bold labels */
     }
+
     input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
+      width: 100%; /* Full width */
+      padding: 10px; /* Padding */
+      margin-bottom: 15px; /* Spacing */
+      border: 1px solid #ccc; /* Border */
+      border-radius: 3px; /* Rounded corners */
+      font-size: 1rem; /* Font size */
     }
+
     button {
-      background-color: #3498db;
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      width: 100%;
+      background-color: #3498db; /* Button color */
+      color: white; /* Text color */
+      padding: 10px; /* Padding */
+      border: none; /* No border */
+      border-radius: 3px; /* Rounded corners */
+      cursor: pointer; /* Pointer on hover */
+      width: 100%; /* Full width */
+      font-size: 1rem; /* Font size */
     }
+
     button:hover {
-      background-color: #2980b9;
+      background-color: #2980b9; /* Button hover color */
     }
+
     .message {
-      margin-top: 10px;
-      color: green;
-      font-weight: bold;
+      margin-top: 10px; /* Spacing */
+      color: green; /* Message color */
+      font-weight: bold; /* Bold text */
       text-align: center; /* Center message */
     }
-    footer {
-      background-color: #17d709;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      width: 100%;
-      position: relative;
-    }
+
     .back-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      border-radius: 3px;
-      transition: background-color 0.3s;
+      display: inline-block; /* Inline block */
+      margin-top: 10px; /* Spacing */
+      padding: 10px 15px; /* Padding */
+      background-color: #3498db; /* Link color */
+      color: white; /* Text color */
+      text-decoration: none; /* Remove underline */
+      border-radius: 3px; /* Rounded corners */
+      transition: background-color 0.3s; /* Transition effect */
+      text-align: center; /* Center text */
+      width: 100%; /* Full width */
+      max-width: 400px; /* Max width */
     }
+
     .back-link:hover {
-      background-color: #2980b9;
+      background-color: #2980b9; /* Hover color */
+    }
+
+    footer {
+      background-color: #17d709; /* Footer color */
+      color: white; /* Text color */
+      padding: 15px; /* Padding */
+      text-align: center; /* Center text */
+      width: 100%; /* Full width */
+      position: relative; /* Relative for positioning */
+      bottom: 0; /* Stick to bottom */
+      flex-shrink: 0; /* Prevent shrinking */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .login-form {
+        padding: 15px; /* Padding for smaller screens */
+        width: 100%; /* Full width */
+      }
+
+      input, button {
+        font-size: 0.9rem; /* Smaller font size */
+        padding: 10px; /* Padding */
+      }
+
+      h1 {
+        font-size: 1.8rem; /* Smaller heading size */
+      }
     }
   </style>
 </head>
@@ -94,6 +214,9 @@
 
 <header>
   <nav>
+    <div class="logo">
+      <h2>Creative Web Solutions</h2> <!-- Logo -->
+    </div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
@@ -130,23 +253,35 @@
   const message = document.getElementById('message');
 
   const handleLogin = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default form submission
     
-    const user = JSON.parse(localStorage.getItem('user'));
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const user = JSON.parse(localStorage.getItem('user')); // Get user from localStorage
+    const email = document.getElementById('email').value; // Get email value
+    const password = document.getElementById('password').value; // Get password value
 
     if (user && user.email === email && user.password === password) {
-      message.textContent = `Logged in successfully! Welcome back, ${user.username}!`;
+      message.textContent = `Logged in successfully! Welcome back, ${user.username}!`; // Successful message
       setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'index.html'; // Redirect after 2 seconds
       }, 2000);
     } else {
-      message.textContent = 'Invalid email or password. Please try again.';
+      message.textContent = 'Invalid email or password. Please try again.'; // Error message
     }
   };
 
-  form.addEventListener('submit', handleLogin);
+  form.addEventListener('submit', handleLogin); // Add event listener for form submission
+
+  // Toggle menu for mobile view
+  const menu = document.getElementById('menu');
+  const toggleMenu = () => {
+    menu.classList.toggle('show-menu'); // Toggle menu visibility
+  };
+
+  const menuButton = document.getElementById('menu-toggle');
+  if (menuButton) { // Ensure the button exists
+    menuButton.addEventListener('click', toggleMenu); // Add event listener for menu toggle
+  }
 </script>
+
 </body>
 </html>

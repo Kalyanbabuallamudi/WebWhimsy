@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Contact Us</title>
-  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="styles2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
 
   <style>
     /* Global Styles */
@@ -13,169 +14,272 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background-color: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif; /* Use Poppins font */
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      min-height: 100vh; /* Ensure full height */
     }
 
+    header {
+      background-color: #333; /* Header background */
+      padding: 10px 20px; /* Adjust padding */
+    }
 
+    /* Logo Styles */
+    .logo h2 {
+      font-family: 'Dancing Script', cursive; /* Cursive font */
+      font-size: 36px; /* Adjust the font size */
+      color: #007BFF; /* Color for the logo text */
+      margin: 0; /* Remove default margin */
+      padding: 10px 0; /* Add padding */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+      letter-spacing: 1px; /* Add spacing between letters */
+      text-align: center; /* Center the text */
+    }
+
+    /* Additional styling for the nav */
+    nav {
+      background-color: #fff; /* Background color for navigation */
+      padding: 15px; /* Padding around the nav */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+    
+    .nav-links {
+      list-style: none; /* Remove bullet points */
+      padding: 0; /* Remove padding */
+    }
+
+    .nav-links li {
+      display: inline; /* Inline list items */
+      margin-right: 20px; /* Space between links */
+    }
+
+    .nav-links a {
+      text-decoration: none; /* Remove underline from links */
+      color: #333; /* Color for links */
+      font-weight: 600; /* Font weight for links */
+    }
+
+    /* Add responsiveness */
+    @media (max-width: 768px) {
+      .logo h2 {
+        font-size: 28px; /* Adjust logo size for smaller screens */
+      }
+      
+      .nav-links li {
+        display: block; /* Stack links vertically on small screens */
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Space between links */
+      }
+    }
+    /* Mobile Menu */
+    #menu-toggle {
+      display: none; /* Hide checkbox */
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Position menu */
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: #333; /* Background color */
+        display: none; /* Initially hidden */
+      }
+
+      nav ul li {
+        text-align: center; /* Center nav items */
+        width: 100%; /* Full width for mobile */
+      }
+
+      nav .menu-icon {
+        display: block; /* Show icon for mobile */
+      }
+
+      #menu-toggle:checked + label + ul {
+        display: flex; /* Show menu when toggled */
+      }
+    }
+
+    /* Hero Section */
     .hero {
-      padding: 60px;
-      text-align: center;
-      background-color: #3498db;
-      color: #fff;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-      position: relative;
+      padding: 60px 20px; /* Hero section padding */
+      text-align: center; /* Centered text */
+      background-color: #3498db; /* Hero background */
+      color: #fff; /* Text color */
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+      margin-bottom: 30px; /* Space below */
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      animation: fadeIn 1.2s ease-in-out;
+      font-size: 2.5rem; /* Heading size */
+      margin-bottom: 20px; /* Space below heading */
+      animation: fadeIn 1.2s ease-in-out; /* Fade-in effect */
     }
 
+    /* Contact Form */
     form {
-      background-color: #fff;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      margin: 0 auto;
-      animation: slideIn 1s ease-out;
+      background-color: #fff; /* Form background */
+      padding: 40px; /* Padding */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+      max-width: 600px; /* Max width */
+      margin: 0 auto; /* Center form */
+      animation: slideIn 1s ease-out; /* Slide-in effect */
     }
 
     label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
-      font-size: 1rem;  /* Adjusted font size for better visibility */
-      color: #333;
+      display: block; /* Block display */
+      margin-bottom: 5px; /* Spacing */
+      font-weight: 600; /* Bold labels */
+      font-size: 1rem; /* Font size */
+      color: #333; /* Label color */
     }
 
     input[type="text"], input[type="email"], textarea {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #ddd;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
+      width: 100%; /* Full width */
+      padding: 12px; /* Padding */
+      border: 2px solid #ddd; /* Border */
+      border-radius: 5px; /* Rounded corners */
+      margin-bottom: 20px; /* Spacing */
+      font-size: 1rem; /* Font size */
+      transition: border-color 0.3s ease; /* Transition for focus effect */
     }
 
     input:focus, textarea:focus {
-      border-color: #3498db;
-      outline: none;
+      border-color: #3498db; /* Border color on focus */
+      outline: none; /* Remove outline */
     }
 
     button[type="submit"] {
-      display: inline-block;
-      padding: 12px 30px;
-      background-color: #e74c3c;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      display: inline-block; /* Inline display */
+      padding: 12px 30px; /* Padding */
+      background-color: #e74c3c; /* Button color */
+      color: #fff; /* Text color */
+      border: none; /* No border */
+      border-radius: 5px; /* Rounded corners */
+      font-size: 1.1rem; /* Font size */
+      cursor: pointer; /* Pointer on hover */
+      transition: background-color 0.3s ease; /* Transition for hover effect */
     }
 
     button[type="submit"]:hover {
-      background-color: #c0392b;
+      background-color: #c0392b; /* Hover color */
     }
 
     .error-message {
-      font-size: 0.9rem;
-      color: #e74c3c;
-      margin-top: -15px;
-      margin-bottom: 15px;
+      font-size: 0.9rem; /* Error message font size */
+      color: #e74c3c; /* Error color */
+      margin-top: -15px; /* Negative margin for positioning */
+      margin-bottom: 15px; /* Spacing */
     }
 
     footer {
-    background-color: #17d709;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+      background-color: #17d709; /* Footer color */
+      color: white; /* Text color */
+      padding: 20px; /* Padding */
+      text-align: center; /* Center text */
+      width: 100%; /* Full width */
+      position: relative; /* Relative for positioning */
+      bottom: 0; /* Stick to bottom */
+      flex-shrink: 0; /* Prevent shrinking */
+    }
+
     /* Animations */
     @keyframes fadeIn {
       0% {
-        opacity: 0;
+        opacity: 0; /* Start transparent */
       }
       100% {
-        opacity: 1;
+        opacity: 1; /* End fully opaque */
       }
     }
 
     @keyframes slideIn {
       0% {
-        transform: translateY(30px);
-        opacity: 0;
+        transform: translateY(30px); /* Start below */
+        opacity: 0; /* Start transparent */
       }
       100% {
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* End fully opaque */
       }
     }
 
     /* Responsive Styles */
     @media (max-width: 768px) {
       h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Smaller heading size */
       }
 
       nav ul li {
-        display: block;
-        margin: 10px 0;
+        display: block; /* Stack nav items */
+        margin: 10px 0; /* Spacing */
       }
 
       nav ul li a {
-        font-size: 1rem;
+        font-size: 1rem; /* Font size for links */
       }
 
       form {
-        padding: 30px;
+        padding: 30px; /* Reduced padding */
+      }
+
+      input[type="text"], input[type="email"], textarea {
+        padding: 10px; /* Reduced padding */
+        font-size: 0.9rem; /* Smaller font size */
+      }
+
+      button[type="submit"] {
+        font-size: 1rem; /* Smaller font size */
+        padding: 10px 25px; /* Reduced padding */
       }
     }
   </style>
-  
+
   <script src="script.js" defer></script>
 </head>
 <body>
 
   <header>
     <nav>
-      <ul>
+      <div class="logo">
+        <h2>Creative Web Solutions</h2> <!-- Cursive logo -->
+      </div>
+      <input type="checkbox" id="menu-toggle"> <!-- Checkbox for mobile menu -->
+      <label for="menu-toggle" class="menu-icon">&#9776;</label> <!-- Hamburger icon -->
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="Registration.html">Register/Login</a></li>
-       <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero" id="contact">
-    <h1>Contact Us</h1>
+    
     <form id="contactForm">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required aria-label="Name"> <!-- Added aria-label -->
       <span id="nameError" class="error-message"></span>
-      
+
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required aria-label="Email"> <!-- Added aria-label -->
       <span id="emailError" class="error-message"></span>
-      
+
       <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
+      <textarea id="message" name="message" required aria-label="Message"></textarea> <!-- Added aria-label -->
       <span id="messageError" class="error-message"></span>
-      
+
       <button type="submit">Send Message</button>
     </form>
-    <p><a href="index.html">Back to Main Page</a></p>
+
   </section>
 
   <footer>
