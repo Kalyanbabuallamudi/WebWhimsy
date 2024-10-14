@@ -75,6 +75,33 @@
                 max-width: 400px; /* Maximum width for message */
             }
         }
+        .hero {
+    background-image: url('a5.avif');
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover;      /* Ensures the image covers the entire section */
+    background-position: center;  /* Centers the background image */
+    height: 100vh;               /* Optional: Set height to full viewport height */
+    position: relative;           /* Necessary for overlay positioning */
+}
+
+.overlay {
+    position: absolute;           /* Allows overlay to cover the hero section */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;                  /* Ensures overlay is above background but below content */
+}
+
+.content {
+    position: relative;           /* Ensure content is above overlay */
+    z-index: 2;                  /* Ensure content is above the overlay */
+    color: white;                /* Text color for better contrast */
+    text-align: center;          /* Center text alignment */
+    padding: 20px;               /* Optional: Add padding */
+}
+
     </style>
     <script>
         // JavaScript to detect mobile devices
@@ -108,14 +135,15 @@
     </nav>
 </header>
 
-<section class="hero" id="home">
-    <div class="overlay"></div>
-    <div class="content">
-        <h1>Welcome to Creative Web Solutions</h1>
-        <p>We create modern, responsive websites that deliver outstanding user experiences. From web development to UI/UX design and SEO optimization, we help your brand stand out online.</p>
-        <a href="#services" class="btn">Explore Services</a>
-    </div>
+<section class="hero" id="home" style="background-image: url('a5.avif');">
+  <div class="overlay"></div>
+  <div class="content">
+      <h1>Welcome to Creative Web Solutions</h1>
+      <p>We create modern, responsive websites that deliver outstanding user experiences. From web development to UI/UX design and SEO optimization, we help your brand stand out online.</p>
+      <a href="#services" class="btn">Explore Services</a>
+  </div>
 </section>
+
 
 <section class="combined-section" style="background-image: url('b3.webp'); padding: 50px 0;">
     <div class="services" id="services">
