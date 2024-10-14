@@ -1,0 +1,93 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Header Styling */
+  header {
+    background-color: #333;
+    padding: 10px 0;
+    position: sticky; /* Sticky header */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-between; /* Distribute space between logo and nav */
+    align-items: center;
+    padding: 0 20px; /* Adjust padding for spacing */
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Add gap between menu items */
+  }
+  
+  header nav ul li {
+    list-style: none;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    color: #007BFF; /* Hover effect */
+  }
+  
+  /* Responsive Media Query for smaller screens */
+  @media (max-width: 768px) {
+    header nav ul {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      display: none; /* Initially hide the mobile menu */
+      transition: height 0.3s ease;
+    }
+  
+    header nav ul.active {
+      display: flex; /* Show mobile menu when toggled */
+    }
+  
+    header nav ul li {
+      text-align: center;
+      padding: 15px 0; /* More padding for touch devices */
+    }
+  
+    /* Mobile menu icon */
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      color: white;
+      font-size: 24px;
+    }
+  
+    .menu-toggle.active {
+      color: #007BFF; /* Toggle icon active state */
+    }
+  }
+  
+  /* Menu toggle hidden on larger screens */
+  .menu-toggle {
+    display: none;
+  }
+  

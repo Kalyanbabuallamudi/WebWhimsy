@@ -11,42 +11,6 @@ body {
     line-height: 1.6;
 }
 
-/* Sticky Header */
-header {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    transition: background 0.3s ease; /* Transition for background change */
-}
-
-/* Navbar styles */
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 20px;
-    transition: background 0.3s ease, transform 0.3s ease; /* Added transform */
-}
-
-nav ul li a:hover {
-    background-color: #fff;
-    color: #333;
-    border-radius: 5px;
-    transform: translateY(-2px); /* Lift effect on hover */
-}
 
 /* Hero Section */
 .hero {
