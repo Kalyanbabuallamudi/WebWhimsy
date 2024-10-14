@@ -1,0 +1,178 @@
+/* Resetting margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Sticky Header */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease; /* Transition for background change */
+}
+
+/* Navbar styles */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: background 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('a5.avif') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    background-attachment: fixed; /* Parallax effect */
+    animation: fadeIn 1s; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #f04c4c;
+    color: #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #f04c4c;
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Section styles */
+section {
+    padding: 60px 0;
+    text-align: center;
+    background: url('b3.webp') no-repeat center center;
+    background-size: cover; 
+    background-attachment: fixed; 
+}
+
+/* Services and Testimonials */
+.services, .testimonials {
+    background-color: #f4f4f4;
+}
+
+.service-grid, .testimonial-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.service-box, .testimonial-box {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Added transition */
+    perspective: 1000px; /* Perspective for 3D effect */
+}
+
+/* Flip Effect on Hover */
+.service-box:hover, .testimonial-box:hover {
+    transform: rotateY(10deg); /* Rotate on hover */
+}
+
+/* Title styles */
+h2 {
+    margin-bottom: 30px;
+    color: #f4f4f4;
+}
+
+
+/* Footer styles */
+footer {
+    background-color: #17d709;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .service-box, .testimonial-box {
+        flex: 1 1 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}

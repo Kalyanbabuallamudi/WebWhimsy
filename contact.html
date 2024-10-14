@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact Us</title>
+
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Sticky Header */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease; /* Transition for background change */
+}
+
+/* Navbar styles */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: background 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+    .hero {
+      padding: 60px;
+      text-align: center;
+      background-color: #3498db;
+      color: #fff;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+      animation: slideIn 1s ease-out;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      font-size: 1rem;  /* Adjusted font size for better visibility */
+      color: #333;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    button[type="submit"] {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #c0392b;
+    }
+
+    .error-message {
+      font-size: 0.9rem;
+      color: #e74c3c;
+      margin-top: -15px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+    background-color: #17d709;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      nav ul li {
+        display: block;
+        margin: 10px 0;
+      }
+
+      nav ul li a {
+        font-size: 1rem;
+      }
+
+      form {
+        padding: 30px;
+      }
+    }
+  </style>
+  
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="Registration.html">Register/Login</a></li>
+       <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="contact">
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <span id="nameError" class="error-message"></span>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <span id="emailError" class="error-message"></span>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <span id="messageError" class="error-message"></span>
+      
+      <button type="submit">Send Message</button>
+    </form>
+    <p><a href="index.html">Back to Main Page</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Creative Web Solutions by Kalyan Babu Allamudi | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

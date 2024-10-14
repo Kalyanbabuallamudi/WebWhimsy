@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About Us</title>
+  
+
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+      /* Sticky Header */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease; /* Transition for background change */
+}
+
+/* Navbar styles */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: background 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+    /* Hero Section */
+    .hero {
+      padding: 60px;
+      text-align: center;
+      background-color: #e2f206;
+      color: #fff; /* White text */
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ecf0f1; /* Light grey for the title */
+      margin-bottom: 20px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      animation: slideIn 1s ease-out;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #8e44ad; /* Deep purple for subheading */
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #2c3e50; /* Dark blue text for paragraphs */
+    }
+
+    p strong {
+      color: #e74c3c; /* Highlight important text in red */
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2c3e50;
+      color: #bdc3c7; /* Light grey for footer text */
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+
+    footer {
+    background-color: #17d709;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      nav ul li {
+        display: block;
+        margin: 10px 0;
+      }
+
+      nav ul li a {
+        font-size: 1rem;
+      }
+
+      .about-content {
+        padding: 30px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="Registration.html">Register/Login</a></li>
+       <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <h1>About Us</h1>
+    <div class="about-content">
+      <h2>Welcome to Creative Web Solutions</h2>
+      <p>At <strong>Creative Web Solutions</strong>, we believe that every idea deserves a powerful and visually stunning online presence...</p>
+      <p><a href="index.html">Back to Main Page</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Creative Web Solutions by Kalyan Babu Allamudi | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

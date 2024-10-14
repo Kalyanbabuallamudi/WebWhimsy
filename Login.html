@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px 0;
+      position: sticky; /* Changed to sticky */
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0; /* Remove default padding */
+    }
+    nav ul li {
+      margin: 0 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: #fff;
+      color: #333;
+      border-radius: 5px;
+      transform: translateY(-2px);
+    }
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .login-form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center; /* Center the heading */
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .message {
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+      text-align: center; /* Center message */
+    }
+    footer {
+      background-color: #17d709;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      width: 100%;
+      position: relative;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background-color 0.3s;
+    }
+    .back-link:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="Registration.html">Register/Login</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="content">
+  <div class="login-form">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required aria-label="Email">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required aria-label="Password">
+
+      <button type="submit">Login</button>
+    </form>
+    <p class="message" id="message"></p>
+  </div>
+</div>
+
+<a href="index.html" class="back-link">Back to Main Page</a>
+
+<footer>
+  <p>&copy; 2024 Creative Web Solutions by Kalyan Babu Allamudi | All Rights Reserved</p>
+</footer>
+
+<script>
+  const form = document.getElementById('loginForm');
+  const message = document.getElementById('message');
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    
+    const user = JSON.parse(localStorage.getItem('user'));
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (user && user.email === email && user.password === password) {
+      message.textContent = `Logged in successfully! Welcome back, ${user.username}!`;
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 2000);
+    } else {
+      message.textContent = 'Invalid email or password. Please try again.';
+    }
+  };
+
+  form.addEventListener('submit', handleLogin);
+</script>
+</body>
+</html>
